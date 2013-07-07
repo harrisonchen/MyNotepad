@@ -129,6 +129,8 @@ string DoublyList::deleteNode(string d)
 			if(temp != 0)
 			{
 				info = temp->data;
+				temp->prev->next = temp->next;
+				temp->next->prev = temp->prev;
 				delete temp;
 				return info;
 			}

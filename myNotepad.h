@@ -9,6 +9,7 @@ class MyNotepad
 {
 public:
 	MyNotepad();
+	void loadNotes();
 	void createNote(string);
 	string deleteNote(string);
 	void editNote(string);

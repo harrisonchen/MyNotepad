@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
 	MyNotepad Notepad1;
+	Notepad1.loadNotes();
 	int option;
 	string title, val, hold;
 	bool exit = false;
@@ -46,6 +47,13 @@ int main()
 		else if(option == 4)
 		{
 			Notepad1.listNotes();
+		}
+		else if(option == 5)
+		{
+			Notepad1.listNotes();
+			cout << "Title of note to read: ";
+			getline(cin, title);
+			Notepad1.readNote(title);
 		}
 		else if(option == 6)
 		{
