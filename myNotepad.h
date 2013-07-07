@@ -15,6 +15,8 @@ public:
 	void editNote(string);
 	void listNotes();
 	void readNote(string);
+	bool noteExist(string);
+	bool isEmpty();
 
 protected:
 	DoublyList notes;

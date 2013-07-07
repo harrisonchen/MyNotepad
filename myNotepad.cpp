@@ -5,7 +5,7 @@ using namespace std;
 
 MyNotepad::MyNotepad()
 {
-
+	loadNotes();
 }
 
 void MyNotepad::loadNotes()
@@ -42,6 +42,10 @@ string MyNotepad::deleteNote(string title)
 {
 	string info;
 	info = notes.deleteNode(title);
+	if(info == "empty" || info == "none")
+	{
+		return info;
+	}
 	ofstream writeFile("SavedNotes/files.txt");
 	while(!notes.isEmpty())
 	{
@@ -105,3 +109,28 @@ void MyNotepad::readNote(string title)
 	cout << sentences;
 	readNote.close();	
 }
+
+bool MyNotepad::noteExist(string title)
+{
+	if(notes.isInList(title))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool MyNotepad::isEmpty()
+{
+	if(notes.isEmpty())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+

@@ -143,11 +143,18 @@ string DoublyList::deleteNode(string d)
 	return "empty";
 }
 
+bool DoublyList::isInList(string d)
+{
+	DLLNode *temp;
+	for(temp = head; (temp != 0)&&(temp->data != d);temp = temp->next);
+	return (temp != 0);
+}
+
 void DoublyList::printList()
 {
 	if(isEmpty())
 	{
-		cout << "Empty List" << endl;
+		cout << "Empty Notepad" << endl;
 	}
 	else
 	{
