@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	MyNotepad Notepad1;
-	int option;
+	string option;
 	string title, val, hold;
 	bool exit = false;
 
@@ -22,23 +22,23 @@ int main()
 		cin >> option;
 		cin.ignore(10, '\n');
 		cout << endl;
-		if(option == 1)
+		if(option == "1")
 		{
 			cout << "Title of new note: ";
 			getline(cin, title);
 			Notepad1.createNote(title);
 			cout << endl << "The note \"" << title << "\" has been successfully created!" << endl;
 		}
-		else if(option == 2)
+		else if(option == "2")
 		{
-			cout << "List of Notes:" << endl;
-			Notepad1.listNotes();
 			if(Notepad1.isEmpty())
 			{
-				cout << endl << "There is nothing to delete" << endl;
+				cout << "There is nothing to delete" << endl;
 			}
 			else
 			{
+				cout << "List of Notes:" << endl;
+				Notepad1.listNotes();
 				cout << endl << "Title of note to delete: ";
 				getline(cin, title);
 				val = Notepad1.deleteNote(title);
@@ -56,7 +56,7 @@ int main()
 				}
 			}
 		}
-		else if(option == 3)
+		else if(option == "3")
 		{
 			if(Notepad1.isEmpty())
 			{
@@ -80,11 +80,11 @@ int main()
 				}
 			}
 		}
-		else if(option == 4)
+		else if(option == "4")
 		{
 			Notepad1.listNotes();
 		}
-		else if(option == 5)
+		else if(option == "5")
 		{
 			if(Notepad1.isEmpty())
 			{
@@ -108,7 +108,7 @@ int main()
 				}
 			}
 		}
-		else if(option == 6)
+		else if(option == "6")
 		{
 			exit = true;
 		}
