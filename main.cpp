@@ -1,5 +1,4 @@
 #include "myNotepad.cpp"
-#include <iostream>
 
 using namespace std;
 
@@ -36,6 +35,13 @@ int main()
 			getline(cin, title);
 			val = Notepad1.deleteNote(title);
 			cout << endl << "The note \"" << title << "\" has been successfully deleted!" << endl;
+		}
+		else if(option == 3)
+		{
+			cout << "Title of note to edit: ";
+			getline(cin, title);
+			Notepad1.editNote(title);
+			cout << endl << "\"" << title << "\" has been editted!" << endl;
 		}
 		else if(option == 4)
 		{
