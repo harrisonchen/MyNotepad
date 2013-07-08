@@ -26,14 +26,21 @@ int main()
 		{
 			cout << "Title of new note: ";
 			getline(cin, title);
-			Notepad1.createNote(title);
-			cout << endl << "The note \"" << title << "\" has been successfully created!" << endl;
+			if(Notepad1.noteExist(title))
+			{
+				cout << endl << "The note \"" << title << "\" already exists." << endl;
+			}
+			else
+			{
+				Notepad1.createNote(title);
+				cout << endl << "The note \"" << title << "\" has been successfully created!" << endl;
+			}
 		}
 		else if(option == "2")
 		{
 			if(Notepad1.isEmpty())
 			{
-				cout << "There is nothing to delete" << endl;
+				cout << "There is nothing to delete." << endl;
 			}
 			else
 			{
@@ -44,11 +51,11 @@ int main()
 				val = Notepad1.deleteNote(title);
 				if(val == "empty")
 				{
-					cout << endl << "There are no notes in the Notepad" << endl;
+					cout << endl << "There are no notes in the Notepad." << endl;
 				}
 				else if(val == "none")
 				{
-					cout << endl << "The note \"" << title << "\" does not exist" << endl;
+					cout << endl << "The note \"" << title << "\" does not exist." << endl;
 				}
 				else
 				{
@@ -60,7 +67,7 @@ int main()
 		{
 			if(Notepad1.isEmpty())
 			{
-				cout << "There is nothing to edit" << endl;
+				cout << "There is nothing to edit." << endl;
 			}
 			else
 			{
@@ -76,7 +83,7 @@ int main()
 				}
 				else
 				{
-					cout << endl << "\"" << title << "\" does not exist" << endl;
+					cout << endl << "\"" << title << "\" does not exist." << endl;
 				}
 			}
 		}
@@ -88,7 +95,7 @@ int main()
 		{
 			if(Notepad1.isEmpty())
 			{
-				cout << "There is nothing to read" << endl;
+				cout << "There is nothing to read." << endl;
 			}
 			else
 			{
@@ -104,7 +111,7 @@ int main()
 				}
 				else
 				{
-					cout << endl << "\"" << title << "\" does not exist" << endl;
+					cout << endl << "\"" << title << "\" does not exist." << endl;
 				}
 			}
 		}
